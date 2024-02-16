@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "namespace": "org.rhatlapa.pulsardemo.avro",
+  "name": "TestDataAvro",
+  "fields": [
+    {
+      "name": "attribute",
+      "type": [
+        "string"
+      ]
+    },
+    {
+      "name": "value",
+      "type": [
+        "int"
+      ],
+      "default": 0
+    }
+  ]
+}

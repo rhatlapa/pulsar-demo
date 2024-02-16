@@ -16,11 +16,12 @@ public class PulsarClassBasedJsonSchemaDemo {
 	private static final Logger LOGGER = LoggerFactory.getLogger(PulsarClassBasedJsonSchemaDemo.class);
 
 	public static void main(String[] args) throws IOException {
+		var schemaInfo = Schema.JSON(TestData.class);
 		try (var pulsarClient = PulsarClient.builder()
 				.serviceUrl("pulsar://localhost:6650")
 					.build()) {
 
-			try (var testDataProducer = pulsarClient.newProducer(Schema.JSON(TestData.class)).topic(TOPIC_WITH_JSON).create()) {
+			try (var testDataProducer = pulsarClient.newProducer(schemaInfo).topic(TOPIC_WITH_JSON).create()) {
 
 				var messageId = testDataProducer.newMessage()
 						.key("id1")
@@ -30,7 +31,7 @@ public class PulsarClassBasedJsonSchemaDemo {
 				LOGGER.info("Sent message '{}'", messageId);
 			}
 
-			try (var reader = pulsarClient.newReader(Schema.JSON(TestData.class)).topic(TOPIC_WITH_JSON)
+			try (var reader = pulsarClient.newReader(schemaInfo).topic(TOPIC_WITH_JSON)
 					.subscriptionName("demo-2")
 					.readerName("demo-reader")
 					.startMessageId(MessageId.earliest)
