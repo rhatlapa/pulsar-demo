@@ -22,9 +22,9 @@ public class PulsarClassBasedJsonSchemaDemo {
 
 			try (var testDataProducer = pulsarClient.newProducer(Schema.JSON(TestData.class)).topic(TOPIC_WITH_JSON).create()) {
 
-				var messageId = testDataProducer.newMessage(Schema.JSON(TestData.class))
+				var messageId = testDataProducer.newMessage()
 						.key("id1")
-						.value(TestData.builder().data("some test data").field2("field 2 data").build())
+						.value(TestData.builder().attribute("some test data").value(5).build())
 						.disableReplication()
 						.send();
 				LOGGER.info("Sent message '{}'", messageId);

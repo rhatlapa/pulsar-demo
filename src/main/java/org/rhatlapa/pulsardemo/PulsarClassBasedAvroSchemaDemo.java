@@ -23,7 +23,7 @@ public class PulsarClassBasedAvroSchemaDemo {
 
 				var messageId = testDataProducer.newMessage()
 						.key("id1")
-						.value(TestData.builder().data("some test data").field2("field 2 data").build())
+						.value(TestData.builder().attribute("some test data").value(5).build())
 						.disableReplication()
 						.send();
 				LOGGER.info("Sent message '{}'", messageId);
