@@ -24,6 +24,7 @@
 
 		<maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
 		<avro.version>1.11.3</avro.version>
+		<jsonschema2pojo.maven.plugin.version>1.2.1</jsonschema2pojo.maven.plugin.version>
 
 	</properties>
 
@@ -127,6 +128,26 @@
 								<import>${project.basedir}/src/main/resources/avro/test_data.avsc</import>
 							</imports>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.jsonschema2pojo</groupId>
+				<artifactId>jsonschema2pojo-maven-plugin</artifactId>
+				<version>${jsonschema2pojo.maven.plugin.version}</version>
+				<configuration>
+					<sourceDirectory>${project.basedir}/src/main/resources/json</sourceDirectory>
+					<targetPackage>org.rhatlapa.pulsardemo.dto.generated</targetPackage>
+					<useJakartaValidation>true</useJakartaValidation>
+					<generateBuilders>true</generateBuilders>
+					<useInnerClassBuilders>true</useInnerClassBuilders>
+					<includeSetters>false</includeSetters>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>

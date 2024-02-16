@@ -5,8 +5,9 @@
 
 Then you can run the individual demo examples showcasing different features:
 
-| Demo main method                                              | Description                                                                                   |
-|---------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| org.rhatlapa.pulsardemo.PulsarClassBasedJsonSchemaDemo        | Showcase how to create producer & subscriber with JSON schema defined based on provided class |
-| org.rhatlapa.pulsardemo.PulsarClassBasedAvroSchemaDemo        | Showcase how to create producer & subscriber with AVRO schema defined based on provided class |
-| org.rhatlapa.pulsardemo.PulsarExternallyDefinedAvroSchemaDemo | Showcase how to create producer & subscriber with AVRO schema defined via external descriptor |
+| Demo main method                                              | Description                                                                                                        |
+|---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| org.rhatlapa.pulsardemo.PulsarClassBasedJsonSchemaDemo        | Showcase how to create producer & subscriber with JSON schema defined based on provided class                      |
+| org.rhatlapa.pulsardemo.PulsarClassBasedAvroSchemaDemo        | Showcase how to create producer & subscriber with AVRO schema defined based on provided class                      |
+| org.rhatlapa.pulsardemo.PulsarExternallyDefinedAvroSchemaDemo | Showcase how to create producer & subscriber with AVRO schema defined via external descriptor                      |
+| org.rhatlapa.pulsardemo.PulsarExternallyDefinedJsonSchemaDemo | Showcase how to create producer & subscriber with POJO generated using JSON schema defined via external descriptor |

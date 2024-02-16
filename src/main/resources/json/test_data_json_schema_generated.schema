@@ -1,0 +1,15 @@
+{
+  "$id": "https://example.com/testdata.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestData schema",
+  "type": "object",
+  "properties": {
+    "attribute": {"type": "string"},
+    "value": {"type": "integer"}
+  },
+  "required": [
+    "attribute",
+    "value"
+  ],
+  "additionalProperties":false
+}
